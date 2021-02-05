@@ -3,7 +3,13 @@
 <h3>Welcome Brothers, to the Serverless Dojo.</h3> 
 <h4>Here we will master Graphql built on top of the serverless framework.</h4>
 
-<p>Clone the repo and hit a quick <code>yarn install</code></p>
+<p>Clone the repo and install these dependencies..</p>
+<ul>
+ 
+<li><code>yarn global add serverless</code></li>
+<li><code>yarn add serverless-offline --save-dev</code></li>
+<li><code>yarn add apollo-server-lambda</code></li>
+</ul>
 <br>
 <p>Next, type in <code>serverless offline</code> and visit the url it generates on your local machine</p>
 <br>
