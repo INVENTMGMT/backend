@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TABLE_NAME="questionsTable"
-ATTRIBUTE_DEFINITIONS="AttributeName=wording,AttributeType=S"
-KEY_SCHEMA="AttributeName=wording,KeyType=HASH"
+TABLE_NAME="itemsTable"
+ATTRIBUTE_DEFINITIONS="AttributeName=item,AttributeType=S"
+KEY_SCHEMA="AttributeName=item,KeyType=HASH"
 PROVISIONED_THROUGHPUT="ReadCapacityUnits=5,WriteCapacityUnits=5"
 REGION="localhost"
 ENDPOINT_URL="http://${REGION}:8000"
