@@ -26,3 +26,15 @@
 <p>In the same constant, we define all of the Queries our Graphql server will handle and what it returns. If we define another object, like a Store Item, it can hold a String id and Int price. Then our Query could be define to return a Store Item</p>
 <br>
 <p> Thats all I got for now, we'll do some demos when we meet</p>
+
+<h3>Installing Docker</h3>
+<p>Visit the website <a href=https://docs.docker.com/get-docker/> here </a></p>
+<p>Now follow these commands closely</p>
+<ol>
+ <li>Choose your respective OS and install docker</li>
+ <li>Check Docker installed properly with docker --version</li>
+ <li>Hit <code>docker pull amazon/dynamodb-local</code></li>
+ <li>Run <code>docker run -p 8000:8000 amazon/dynamodb-local</code></li>
+ <li>This shell is now being used for the db listener. Open another shell and run <code>scripts/create-table</code> from the project root directory</li>
+ <li>The printout should list a new table got created on our localhost</li>
+</ol>
