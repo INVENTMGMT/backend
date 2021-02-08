@@ -32,7 +32,7 @@
 <p>Now follow these commands closely</p>
 <ol>
  <li>Choose your respective OS and install docker</li>
- <li>Check Docker installed properly with docker --version</li>
+ <li>Check Docker installed properly with <code>docker --version</code></li>
  <li>Hit <code>docker pull amazon/dynamodb-local</code></li>
  <li>Run <code>docker run -p 8000:8000 amazon/dynamodb-local</code></li>
  <li>This shell is now being used for the db listener. Open another shell and run <code>scripts/create-table</code> from the project root directory</li>
