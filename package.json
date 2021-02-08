@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "apollo-server-lambda": "^2.19.2"
+  }
+}
