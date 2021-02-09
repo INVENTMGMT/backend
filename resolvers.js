@@ -1,6 +1,9 @@
+const itemFunctions = require('./item-functions');
+
 const resolvers = {
     Query: {
-        hello: (_, params) => "Hello from Apollo Server!",
+        addItem: (_, params) => itemFunctions.createItem(params),
+        getAllItems: (_, params) => itemFunctions.getAllItems()
     },
 };
 

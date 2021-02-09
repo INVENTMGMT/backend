@@ -3,7 +3,14 @@ const { gql } = require('apollo-server-lambda')
 const typeDefs = gql`
 
   type Query {
-    hello: String
+    addItem(name: String, price: Int, quantity: Int): Item
+    getAllItems: [Item]
+  }
+
+  type Item {
+    name: String
+    price: Int
+    quantity: Int
   }
 `;
 
