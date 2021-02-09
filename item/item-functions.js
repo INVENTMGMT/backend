@@ -1,4 +1,4 @@
-const db = require('./database-ops');
+const db = require('../database/database-ops');
 const table = 'itemsTable';
 
 function getAllItems() {
@@ -8,7 +8,6 @@ function getAllItems() {
       'name',
       'price',
       'quantity'
-
     ],
   };
 
