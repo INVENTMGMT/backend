@@ -1,4 +1,4 @@
-const itemFunctions = require('./item-functions');
+const itemFunctions = require('../item/item-functions');
 
 const resolvers = {
     Query: {
