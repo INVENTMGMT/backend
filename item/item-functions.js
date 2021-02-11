@@ -1,6 +1,27 @@
 const db = require('../database/database-ops');
 const table = 'itemsTable';
 
+function getByName(params) {
+  var params = {
+    TableName: table,
+    // AttributesToGet: [
+    //   'name',
+    //   'price',
+    //   'quantity'
+    // ],
+    ExpressionAttributeNames: {
+      '#name': 'name'
+    },
+    ExpressionAttributeValues: {
+      ':itemName': params.name
+    },
+    FilterExpression: 'contains(#name, :itemName)',
+  };
+
+  var res = db.scan(params);
+  return res;
+}
+
 function getAllItems() {
   var params = {
     TableName: table,
@@ -11,7 +32,8 @@ function getAllItems() {
     ],
   };
 
-  return db.scan(params);
+  var res = db.scan(params);
+  return res;
 }
 
 function createItem(item) {
@@ -28,4 +50,4 @@ function createItem(item) {
   return res
 }
 
-module.exports = { getAllItems, createItem }
+module.exports = { getAllItems, createItem, getByName }
