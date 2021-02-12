@@ -4,11 +4,10 @@ const table = 'itemsTable';
 function getByName(params) {
   var params = {
     TableName: table,
-    // AttributesToGet: [
-    //   'name',
-    //   'price',
-    //   'quantity'
-    // ],
+    // 'name' is a reserved variable in DynamoDB, so 
+    // we use the statement below to map 'name'
+    // attribute to '#name', where the DB will 
+    // interpret it correctly
     ExpressionAttributeNames: {
       '#name': 'name'
     },
@@ -18,8 +17,7 @@ function getByName(params) {
     FilterExpression: 'contains(#name, :itemName)',
   };
 
-  var res = db.scan(params);
-  return res;
+  return db.scan(params);
 }
 
 function getAllItems() {
@@ -37,10 +35,12 @@ function getAllItems() {
 }
 
 function createItem(item) {
+  var name = item.name;
+  name = name.toLowerCase()
   var params = {
     TableName: table,
     Item: {
-      name: item.name,
+      name: name,
       price: item.price,
       quantity: item.quantity
     }
