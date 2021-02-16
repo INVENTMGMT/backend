@@ -13,20 +13,21 @@ URL = "http://localhost:3000/dev/graphql"
 #     r = requests.post(url=URL, data=queryStr)
 #     print("Response to object #%d: %s" % (i, str(r.text)))
 
-# Deleting 3 Items
-# for i in range(3):
-#     query = { "query": "{ deleteItem(name: \"succulent" + str(i) + "\"){ name price quantity} }" }
-#     queryStr = json.dumps(query)
-#     r = requests.post(url=URL, data=queryStr)
-#     print("Response to object #%d: %s" % (i, str(r)))
-
-query = { "query": "{ deleteItem(name: \"Keon\"){ name price quantity} }" }
+query = { "query": "{ deleteItem(name: \"succulent1\", price:4, quantity:3){ name price quantity} }" }
 queryStr = json.dumps(query)
 r = requests.post(url=URL, data=queryStr)
-print("Response to object: %s" % str(r))
+print(r.text)
 
 # Test for getByName 
 
 
 
 # Test for getAllItems
+
+# test deleteItems
+# Deleting 5 Items
+# for i in range(5):
+#     query = { "query": "{ deleteItem(name: \"succulent" + str(i) + "\"){ name price quantity} }" }
+#     queryStr = json.dumps(query)
+#     r = requests.post(url=URL, data=queryStr)
+#     print("Response to object #%d: %s" % (i, str(r)))

@@ -6,7 +6,7 @@ const typeDefs = gql`
     addItem(name: String, price: Int, quantity: Int): Item
     getAllItems: [Item]
     getByName(name: String): [Item]
-    deleteItem(name: String): Item
+    deleteItem(name: String, price:Int, quantity:Int): Item
   }
 
   type Item {
