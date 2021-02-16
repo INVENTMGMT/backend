@@ -50,4 +50,22 @@ function createItem(item) {
   return res
 }
 
-module.exports = { getAllItems, createItem, getByName }
+function deleteItem(params) {
+  console.log(`PARAMS FOR DELETING: ${JSON.stringify(params)}`);
+  var params = {
+    TableName: table,
+    // ConditionExpression:"contains :name",
+    // ExpressionAttributeValues: {
+    //     ":name": params.name
+    // },
+    Key: {
+      "name": "Keon",
+    },
+    ReturnValues: "ALL_OLD"
+  };
+
+  var res = db.deleteItem(params);
+  return res
+}
+
+module.exports = { getAllItems, createItem, getByName, deleteItem }
