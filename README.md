@@ -16,7 +16,7 @@
 <p>Now you can start to play around with the <strong>resolvers, typedefs, and queries</strong> that our Apollo Server is working with</p>
 
 <h5>Resolvers</h5>
-<p>These will be the keywords that are waiting to be triggered. Our only resolver right now is <code>hello</code>
+<p>These will be the keywords that are waiting to be triggered.</p>
  
  
 <h5>Typedefs</h5>
