@@ -1,6 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server-lambda');
-const { resolvers } = require('./resolvers');
-const { typeDefs } = require('./typedefs')
+const { resolvers } = require('./resolvers/resolvers');
+const { typeDefs } = require('./typedefs/typedefs')
 
 
 const server = new ApolloServer({

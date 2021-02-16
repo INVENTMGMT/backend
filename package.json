@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "apollo-server-lambda": "^2.19.2"
+    "apollo-server-lambda": "^2.19.2",
+    "aws-sdk": "^2.840.0"
   }
 }

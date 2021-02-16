@@ -19,5 +19,26 @@ functions:
           method: post
           cors: true
 
+resources:
+  Resources:
+    questionsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: itemsTable
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+          - AttributeName: price
+            AttributeType: N
+          - AttributeName: quantity
+            AttributeType: N
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
+
 plugins: 
   - serverless-offline
