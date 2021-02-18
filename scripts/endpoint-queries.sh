@@ -32,3 +32,10 @@ curl \
 -X POST -H "Content-Type: application/json" \
 --data '{ "query": "{ getByName(name: \"succulent\"){ id name price quantity } }" }' \
 http://localhost:3000/dev/graphql
+
+echo "------------------------------------------------------------------"
+
+curl \
+-X POST -H "Content-Type: application/json" \
+--data '{ "query": "{ getByID(id: \"001\"){ id name price quantity } }" }' \
+http://localhost:3000/dev/graphql
