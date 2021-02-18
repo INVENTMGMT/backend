@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TABLE_NAME="itemsTable"
-ATTRIBUTE_DEFINITIONS="AttributeName=name,AttributeType=S AttributeName=price,AttributeType=N"
-KEY_SCHEMA="AttributeName=name,KeyType=HASH AttributeName=price,KeyType=RANGE"
+ATTRIBUTE_DEFINITIONS="AttributeName=id,AttributeType=S AttributeName=name,AttributeType=S"
+KEY_SCHEMA="AttributeName=id,KeyType=HASH AttributeName=name,KeyType=RANGE"
 PROVISIONED_THROUGHPUT="ReadCapacityUnits=5,WriteCapacityUnits=5"
 REGION="localhost"
 ENDPOINT_URL="http://${REGION}:8000"
