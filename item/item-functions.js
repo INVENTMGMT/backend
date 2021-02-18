@@ -4,10 +4,13 @@ const table = 'itemsTable';
 function getByName(params) {
   var params = {
     TableName: table,
+    /* !!! IMPORTANT DYNAMODB SYNTAX !!! */
+    
     // 'name' is a reserved variable in DynamoDB, so 
     // we use the statement below to map 'name'
     // attribute to '#name', where the DB will 
     // interpret it correctly
+    
     ExpressionAttributeNames: {
       '#name': 'name'
     },
@@ -24,6 +27,7 @@ function getAllItems() {
   var params = {
     TableName: table,
     AttributesToGet: [
+      'id',
       'name',
       'price',
       'quantity'
@@ -40,6 +44,7 @@ function createItem(item) {
   var params = {
     TableName: table,
     Item: {
+      id: params.id,
       name: name,
       price: item.price,
       quantity: item.quantity
@@ -54,15 +59,10 @@ function deleteItem(params) {
   console.log(`PARAMS FOR DELETING: ${JSON.stringify(params)}`);
   var params = {
     TableName: table,
-    // ExpressionAttributeValues: {
-    //     ":name": params.name
-    // },
-    // ConditionExpression:"contains :name",
     Key: {
       name: params.name,
       price: params.price
     },
-    // ReturnValues: "ALL_OLD"
   };
   
   return db.deleteItem(params);
