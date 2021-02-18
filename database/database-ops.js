@@ -37,4 +37,12 @@ function createItem(params) {
   );
 }
 
-module.exports = { get, scan, createItem }
+function deleteItem(params) {
+  return new Promise((resolve, reject) =>
+    dynamodb.delete(params).promise()
+      .then(() => resolve(params.name))
+      .catch(err => reject(err)),
+  );
+}
+
+module.exports = { get, scan, createItem, deleteItem }
