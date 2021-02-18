@@ -10,7 +10,7 @@ function getByName(params) {
     // we use the statement below to map 'name'
     // attribute to '#name', where the DB will 
     // interpret it correctly
-    
+
     ExpressionAttributeNames: {
       '#name': 'name'
     },
@@ -44,7 +44,7 @@ function createItem(item) {
   var params = {
     TableName: table,
     Item: {
-      id: params.id,
+      id: item.id,
       name: name,
       price: item.price,
       quantity: item.quantity
