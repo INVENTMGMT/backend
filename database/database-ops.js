@@ -21,6 +21,14 @@ function get(params) {
     );
 }
 
+function query(params) {
+  return new Promise((resolve, reject) =>
+    dynamodb.get(params).promise()
+    .then((data) => resolve(data.Item))
+    .catch(err => reject(err))
+    );
+}
+
 function scan(params) {
   return new Promise((resolve, reject) =>
     dynamodb.scan(params).promise()
@@ -45,4 +53,4 @@ function deleteItem(params) {
   );
 }
 
-module.exports = { get, scan, createItem, deleteItem }
+module.exports = { get, query, scan, createItem, deleteItem }

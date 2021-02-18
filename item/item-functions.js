@@ -23,6 +23,17 @@ function getByName(params) {
   return db.scan(params);
 }
 
+function getByID(params) { 
+  var params = {
+    TableName: table,
+    Key: {
+      id: params.id
+    }
+  }
+
+  return db.query(params)
+}
+
 function getAllItems() {
   var params = {
     TableName: table,
@@ -56,7 +67,6 @@ function createItem(item) {
 }
 
 function deleteItem(params) {
-  console.log(`PARAMS FOR DELETING: ${JSON.stringify(params)}`);
   var params = {
     TableName: table,
     Key: {
@@ -68,4 +78,4 @@ function deleteItem(params) {
   return db.deleteItem(params);
 }
 
-module.exports = { getAllItems, createItem, getByName, deleteItem }
+module.exports = { getAllItems, createItem, getByName, getByID, deleteItem }
