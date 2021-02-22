@@ -2,6 +2,7 @@
   "dependencies": {
     "apollo-server-lambda": "^2.20.0",
     "aws-sdk": "^2.840.0",
+    "eslint": "^7.20.0",
     "serverless-offline": "^6.8.0"
   }
 }

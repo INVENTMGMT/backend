@@ -1,7 +1,14 @@
 # 307-project
 
-<h3>Welcome Brothers, to the Serverless Dojo.</h3> 
+<h3>Welcome Friends, to the Serverless Dojo.</h3> 
 <h4>Here we will master Graphql built on top of the serverless framework.</h4>
+
+<h3>Style Requirements</h3>
+<p>For all Javascript files, we are using ESLint plugin off of VSCode to maintain similar style requirements.</p>
+<p>For Python files, we shall use the styles depicted in the following URL:</p>
+<ol>
+<li>https://pypi.org/project/pycodestyle/</li>
+</ol>
 
 <p>Clone the repo and install these dependencies..</p>
 <ul>
