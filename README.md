@@ -10,6 +10,8 @@
 <li>https://pypi.org/project/pycodestyle/</li>
 </ol>
 
+<h3>Setup</h3>
+
 <p>Clone the repo and install these dependencies..</p>
 <ul>
  
