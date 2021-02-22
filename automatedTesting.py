@@ -25,6 +25,7 @@ assert(len(resultingArr) == 1)
 assert(resultingArr[0]["name"] == "succulent3")
 print("Test 1 passed.")
 
+
 # Test2 for getByName
 query = { "query" : "{ getByName(name: \"succulent\"){ name price quantity } }" }
 queryStr = json.dumps(query)
