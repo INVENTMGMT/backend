@@ -5,7 +5,7 @@
 
 <h3>Style Requirements</h3>
 <p>For all Javascript files, we are using ESLint plugin off of VSCode to maintain similar style requirements.</p>
-<p>For Python files, we shall use the styles depicted in the following URL:</p>
+<p>For Python files, we shall use the styles depicted in pycodestyle; the package's information can be found via the following URL:</p>
 <ol>
 <li>https://pypi.org/project/pycodestyle/</li>
 </ol>
