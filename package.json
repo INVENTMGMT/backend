@@ -3,5 +3,8 @@
     "apollo-server-lambda": "^2.20.0",
     "aws-sdk": "^2.840.0",
     "serverless-offline": "^6.8.0"
+  },
+  "scripts": {
+    "test": "scripts/endpoint-queries.sh"
   }
 }
