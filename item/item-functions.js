@@ -54,7 +54,19 @@ function createItem(item) {
   name = name.toLowerCase()
   var params = {
     TableName: table,
-    Item: {
+    Key: {
+      id: item.id
+    },
+    UpdateExpression: 'set #name = :n, price = :p, quantity = :q',
+    ExpressionAttributeValues: {
+      ':n': name,
+      ':p': item.price,
+      ':q': item.quantity
+    },
+    ExpressionAttributeNames: {
+      '#name': 'name'
+    },
+    New: {
       id: item.id,
       name: name,
       price: item.price,
@@ -63,6 +75,7 @@ function createItem(item) {
   };
 
   var res = db.createItem(params);
+  console.log(res);
   return res
 }
 

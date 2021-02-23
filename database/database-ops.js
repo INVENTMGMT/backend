@@ -39,8 +39,8 @@ function scan(params) {
 
 function createItem(params) {
   return new Promise((resolve, reject) =>
-    dynamodb.put(params).promise()
-      .then(() => resolve(params.Item))
+    dynamodb.update(params).promise()
+      .then(() => resolve(params.New))
       .catch(err => reject(err)),
   );
 }
