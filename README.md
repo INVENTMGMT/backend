@@ -38,3 +38,44 @@
  <li>This shell is now being used for the db listener. Open another shell and run <code>scripts/create-table</code> from the project root directory</li>
  <li>The printout should list a new table got created on our localhost</li>
 </ol>
+
+
+<h1>GraphQl Docs</h1>
+
+<h2>1) Adding an item</h2>
+<h5>Usage</h5>
+<p> '{ "query": "{ addItem(id: ID, name: String, price: Int, quantity: Int) { id name price quantity} }" }' </p>
+<h5>Return Value: Item</h5>
+<p>{"data" : { "addItem" : { "id" : ID, "name" : String, "price" : Int, "quantity" : Int}}}</p>
+<p>When your request returns to the frontend, it will be in JSON format. Access any of the attributes of the Item typedef</p>
+<h5>**Special Use Case**</h5>
+<p>This can double as an <strong>update</strong> function in the backend. If the ID already exists in the backend, the item sent will replace the existing one.</p>
+<h5>Instances where this can be used to update</h5>
+<ul>
+ <li>Adding more of an existing item from a recent shipment</li>
+ <li>Changing the price</li>
+ <li>Selling/shipping an item, and reducing the quantity in stock</li>
+ <li>Starting a sale on a particular set of items (multiple add item calls in ONE single query string is possible</li>
+</ul>
+
+
+<h2>2) Getting Item by Name</h2>
+<h5>Usage</h5>
+<p> '{ "query": "{ getByName (name: String) { id name price quantity } }" }' </p>
+<h5>Return Value: [Item]</h5>
+<p>{"data":{"getByName": [{"id" : ID, "name" : String, "price" : Int , "quantity" : Int}, {"id" : ID, "name" : String, "price" : Int, "quantity" : Int}] }}</p>
+<p>When your request returns to the frontend, it will be in JSON format. Index into the list and access any of the attributes of the Item typedef</p>
+<h5>Explanation</h5>
+<p>Use this query to retrieve all items that contain your keyword. For example, if you were looking for any kind of "ball", the search would return a baseball, football, soccer ball etc.</p>
+
+<h2>3) Getting Item by ID</h2>
+<h5>Usage</h5>
+<p> '{ "query": "{ getByID (id: ID) { id name price quantity } }" }' </p>
+<h5>Return Value: Item</h5>
+<p>{"data" : {"getByID" : { "id" : ID," name" : String, "price" : Int, "quantity" : Int }}</p>
+<p>When your request returns to the frontend, it will be in JSON format. Access any of the attributes of the Item typedef</p>
+<h5>Explanation</h5>
+<p>This one will returned a particular item with its respective ID. The use case here is when someone uses a barcode or SKU number for an item. It returns exactly one item OR none if it doesnt exist</p>
+
+
+

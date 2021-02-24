@@ -21,6 +21,14 @@ function get(params) {
     );
 }
 
+function query(params) {
+  return new Promise((resolve, reject) =>
+    dynamodb.get(params).promise()
+    .then((data) => resolve(data.Item))
+    .catch(err => reject(err))
+    );
+}
+
 function scan(params) {
   return new Promise((resolve, reject) =>
     dynamodb.scan(params).promise()
@@ -31,8 +39,8 @@ function scan(params) {
 
 function createItem(params) {
   return new Promise((resolve, reject) =>
-    dynamodb.put(params).promise()
-      .then(() => resolve(params.Item))
+    dynamodb.update(params).promise()
+      .then(() => resolve(params.New))
       .catch(err => reject(err)),
   );
 }
@@ -45,4 +53,4 @@ function deleteItem(params) {
   );
 }
 
-module.exports = { get, scan, createItem, deleteItem }
+module.exports = { get, query, scan, createItem, deleteItem }
