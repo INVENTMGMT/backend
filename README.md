@@ -48,6 +48,16 @@
 <h5>Return Value: Item</h5>
 <p>{"data" : { "addItem" : { "id" : ID, "name" : String, "price" : Int, "quantity" : Int}}}</p>
 <p>When your request returns to the frontend, it will be in JSON format. Access any of the attributes of the Item typedef</p>
+<h5>**Special Use Case**</h5>
+<p>This can double as an <strong>update</strong> function in the backend. If the ID already exists in the backend, the item sent will replace the existing one.</p>
+<h5>Instances where this can be used to update</h5>
+<ul>
+ <li>Adding more of an existing item from a recent shipment</li>
+ <li>Changing the price</li>
+ <li>Selling/shipping an item, and reducing the quantity in stock</li>
+ <li>Starting a sale on a particular set of items (multiple add item calls in ONE single query string is possible</li>
+</ul>
+
 
 <h3>Getting Item by Name</h3>
 <h5>Usage</h5>
