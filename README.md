@@ -42,7 +42,7 @@
 
 <h1>GraphQl Docs</h1>
 
-<h3>Adding an item</h3>
+<h2>Adding an item</h2>
 <h5>Usage</h5>
 <p> '{ "query": "{ addItem(id: ID, name: String, price: Int, quantity: Int) { id name price quantity} }" }' </p>
 <h5>Return Value: Item</h5>
@@ -59,7 +59,7 @@
 </ul>
 
 
-<h3>Getting Item by Name</h3>
+<h2>Getting Item by Name</h2>
 <h5>Usage</h5>
 <p> '{ "query": "{ getByName (name: String) { id name price quantity } }" }' </p>
 <h5>Return Value: [Item]</h5>
@@ -68,7 +68,7 @@
 <h5>Explanation</h5>
 <p>Use this query to retrieve all items that contain your keyword. For example, if you were looking for any kind of "ball", the search would return a baseball, football, soccer ball etc.</p>
 
-<h3>Getting Item by ID</h3>
+<h2>Getting Item by ID</h2>
 <h5>Usage</h5>
 <p> '{ "query": "{ getByID (id: ID) { id name price quantity } }" }' </p>
 <h5>Return Value: Item</h5>
