@@ -50,11 +50,36 @@ function getAllItems() {
 }
 
 function createItem(item) {
+  /* Important Note about return value of this fn!! */
+
+  // createItem is actually using 'update' method from the
+  // dynamodb client. It can double as both a 'putting' and 
+  // and updating fn. If the item with the particular id
+  // doesnt exist, this fn will simply make it. However,
+  // the return value has been tricky. To solve this, I 
+  // put a 'New' attribute in the json. If the doc client
+  // doesnt report any errors, the fn will just return the
+  // 'New' item with updated attributes back to the client
+
+  // THE CLIENT IS RESPONSIBLE FOR SENDING THE UPDATED 
+  // (NAME, PRICE, QUANTITY) TO THE BACKEND!!!!
   var name = item.name;
   name = name.toLowerCase()
   var params = {
     TableName: table,
-    Item: {
+    Key: {
+      id: item.id
+    },
+    UpdateExpression: 'set #name = :n, price = :p, quantity = :q',
+    ExpressionAttributeValues: {
+      ':n': name,
+      ':p': item.price,
+      ':q': item.quantity
+    },
+    ExpressionAttributeNames: {
+      '#name': 'name'
+    },
+    New: {
       id: item.id,
       name: name,
       price: item.price,
@@ -63,6 +88,7 @@ function createItem(item) {
   };
 
   var res = db.createItem(params);
+  console.log(res);
   return res
 }
 
