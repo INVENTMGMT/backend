@@ -77,7 +77,7 @@
 <h5>Explanation</h5>
 <p>This one will returned a particular item with its respective ID. The use case here is when someone uses a barcode or SKU number for an item. It returns exactly one item OR none if it doesnt exist</p>
 
-<h2> Deleting an Item (by ID) </h2>
+<h2>4) Deleting an Item (by ID) </h2>
 <h5>Usage</h5>
 <p> '{ "query": "{ deleteItem (id: ID, name: String, price: Int, quantity: Int): Item) { id name price quantity } }" }' </p>
 <p>This will require your entire object to delete. This should be possible because that data is already being displayed in the client. Package all of that back up and send it to the backend to be delete</p>
