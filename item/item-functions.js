@@ -70,7 +70,7 @@ function createItem(item) {
     Key: {
       id: item.id
     },
-    UpdateExpression: 'set #name = :n, price = :p, quantity = :q',
+    UpdateExpression: 'SET #name = :n, price = :p ADD quantity :q',
     ExpressionAttributeValues: {
       ':n': name,
       ':p': item.price,
@@ -84,7 +84,8 @@ function createItem(item) {
       name: name,
       price: item.price,
       quantity: item.quantity
-    }
+    },
+    ReturnValues: 'ALL_NEW'
   };
 
   var res = db.createItem(params);

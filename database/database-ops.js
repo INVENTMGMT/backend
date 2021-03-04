@@ -40,7 +40,7 @@ function scan(params) {
 function createItem(params) {
   return new Promise((resolve, reject) =>
     dynamodb.update(params).promise()
-      .then(() => resolve(params.New))
+      .then((data) => resolve(data.Attributes))
       .catch(err => reject(err)),
   );
 }
