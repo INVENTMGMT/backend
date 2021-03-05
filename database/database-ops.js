@@ -37,6 +37,14 @@ function scan(params) {
     );
 }
 
+function putItem(params) {
+  return new Promise((resolve, reject) =>
+    dynamodb.put(params).promise()
+      .then((data) => resolve(data.Item))
+      .catch(err => reject(err)),
+  );
+}
+
 function createItem(params) {
   return new Promise((resolve, reject) =>
     dynamodb.update(params).promise()
