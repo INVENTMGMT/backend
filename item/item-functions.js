@@ -96,8 +96,7 @@ function deleteItem(params) {
   var params = {
     TableName: table,
     Key: {
-      name: params.name,
-      price: params.price
+      id: params.id
     },
   };
   
