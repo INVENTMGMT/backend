@@ -124,7 +124,8 @@ function transaction(params) {
     ReturnValues: 'ALL_NEW'
   
   }
-  return db.createItem(updateParams);
+  db.createItem(updateParams);
+  return putParams.Item;
 }
 
 module.exports = { getAllItems, createItem, getByName, getByID, transaction, deleteItem }
