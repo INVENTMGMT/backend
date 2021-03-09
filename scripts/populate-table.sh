@@ -70,7 +70,8 @@ curl \
 
 
 
-echo "Items placed, displaying all items present in table...\n"
+echo "Items placed, displaying all items present in table..."
+echo " "
 
 curl \
   -X POST -H "Content-Type: application/json" \
