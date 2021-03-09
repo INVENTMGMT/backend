@@ -57,5 +57,5 @@ echo "------------------------------------------------------------------"
 
 curl \
 -X POST -H "Content-Type: application/json" \
---data '{ "query": "{ transaction(itemId: \"000\", quantity: -1, ship: true, address: \"123 abc\"){ id quantity } }" }' \
+--data '{ "query": "{ trx(itemId: \"000\", quantity: -1, shipped: true, address: \"123 abc\"){ id quantity address shipped } }" }' \
 http://localhost:3000/dev/graphql
