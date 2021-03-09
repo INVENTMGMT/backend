@@ -22,7 +22,7 @@ const typeDefs = gql`
     getByName(name: String): [Item]
     getByID(id: ID): Item
     deleteItem(id: ID, name: String, price:Int, quantity:Int): Item
-    transaction(itemId: ID, quantity: Int, ship: Boolean, address: String): Item
+    trx(itemId: ID, quantity: Int, shipped: Boolean, address: String): transaction
   }
 
 `;
