@@ -6,7 +6,8 @@ const resolvers = {
         getAllItems: (_, params) => itemFunctions.getAllItems(),
         getByName: (_, params) => itemFunctions.getByName(params),
         getByID: (_, params) => itemFunctions.getByID(params),
-        deleteItem: (_, params) => itemFunctions.deleteItem(params)
+        deleteItem: (_, params) => itemFunctions.deleteItem(params),
+        transaction: (_, params) => itemFunctions.transaction(params)
     },
 };
 

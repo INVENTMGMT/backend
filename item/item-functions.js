@@ -1,5 +1,6 @@
 const db = require('../database/database-ops');
 const table = 'itemsTable';
+const trx = 'transactionTable';
 
 function getByName(params) {
   var params = {
@@ -79,12 +80,6 @@ function createItem(item) {
     ExpressionAttributeNames: {
       '#name': 'name'
     },
-    New: {
-      id: item.id,
-      name: name,
-      price: item.price,
-      quantity: item.quantity
-    },
     ReturnValues: 'ALL_NEW'
   };
 
@@ -105,4 +100,31 @@ function deleteItem(params) {
   return db.deleteItem(params);
 }
 
-module.exports = { getAllItems, createItem, getByName, getByID, deleteItem }
+function transaction(params) {
+    var putParams = {
+      TableName: trx,
+      Item: {
+        id: params.itemId,
+        quantity: params.quantity,
+        shipped: params.shipped,
+        address: params.address,
+      }
+    }
+  db.putItem(putParams).then(data => console.log(data)).catch(err => console.log(err));
+  
+  var updateParams = {
+    TableName: table,
+    Key: {
+      id: params.itemId
+    },
+    UpdateExpression: 'ADD quantity :q',
+    ExpressionAttributeValues: {
+      ':q': params.quantity
+    },
+    ReturnValues: 'ALL_NEW'
+  
+  }
+  return db.createItem(updateParams);
+}
+
+module.exports = { getAllItems, createItem, getByName, getByID, transaction, deleteItem }
