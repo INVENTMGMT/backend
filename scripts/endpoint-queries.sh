@@ -52,3 +52,10 @@ curl \
 -X POST -H "Content-Type: application/json" \
 --data '{ "query": "{ getByID(id: \"001\"){ id name price quantity } }" }' \
 http://localhost:3000/dev/graphql
+
+echo "------------------------------------------------------------------"
+
+curl \
+-X POST -H "Content-Type: application/json" \
+--data '{ "query": "{ trx(itemId: \"000\", quantity: -1, shipped: true, address: \"123 abc\"){ id quantity address shipped } }" }' \
+http://localhost:3000/dev/graphql
