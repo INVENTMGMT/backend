@@ -96,7 +96,7 @@
 <p>Can emulate items being sold or taken out of inventory</p>
 
 
-<h2>4) Carrying out a transaction </h2>
+<h2>4) Carrying out a Transaction </h2>
 <h5>Usage</h5>
 <p> '{ "query": "{ trx (itemId ID, quantity: Int, shipped: Boolean, address: String): Transaction) { id quantity shipped address } }" }' </p>
 <p>This will simulate a customer making a purchase. The item in the inventory database will be appropriately decreased and then the purchase information is stored in the transaction table. The client is responsible for supplying a possible quantity and the correct item ID</p>
