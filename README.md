@@ -1,5 +1,18 @@
 # 307-project
 
+<h1>What is InventMGMT?</h1>
+<p>Need info here about what our project is "a small blurb about a paragraph long"</p>
+
+<h2>Necessary Links</h2>
+<ul>
+ <li><a href="https://github.com/INVENTMGMT/frontend">Frontend</a></li>
+ <li><a href="https://github.com/INVENTMGMT/backend/wiki/UML-Use-Case-Diagram">UML Use Case Diagram</a></li>
+ <li><a href="https://github.com/INVENTMGMT/backend/wiki/Class-Diagram">UML Class Diagram</a></li>
+ <li><a href="FIGMA">Figma Diagram for frontend</a></li>
+</ul>
+
+
+<h2>Development Environment Setup</h2>
 <h3>Welcome Friends, to the Serverless Dojo.</h3> 
 <h4>Here we will master Graphql built on top of the serverless framework.</h4>
 
