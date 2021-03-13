@@ -1,7 +1,16 @@
 # 307-project
 
 <h1>What is InventMGMT?</h1>
-<p>Need info here about what our project is "a small blurb about a paragraph long"</p>
+<p>InventMGMT is a web app designed for companies to manipulate their inventory for organization. Companies can utilize this webapp to:</p>
+<ul>
+ <li>Add Items</li>
+ <li>Manipulate Items</li>
+ <li>Query Items based on their Name or ID</li>
+ <li>Log purchases to keep transaction history</li>
+ <li>See statistics about items (which items are popular, which are not selling, etc.)</li>
+</ul>
+<p>This web app is a powerful tool that any business with in-store inventory should use. It elevates productivity by providing a means for keeping track
+of items, which will eliminate the painful procedure of manually logging each item's sale with pen & paper. If you want to elevate your business, contant InventMGMT for access to this powerfull tool.</p>
 
 <h2>Necessary Links</h2>
 <ul>
