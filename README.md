@@ -21,7 +21,7 @@ of items, which will eliminate the painful procedure of manually logging each it
 </ul>
 
 
-<h2>Development Environment Setup</h2>
+<h1>Development Environment Setup</h1>
 <h3>Welcome Friends, to the Serverless Dojo.</h3> 
 <h4>Here we will master Graphql built on top of the serverless framework.</h4>
 
