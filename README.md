@@ -17,7 +17,7 @@ of items, which will eliminate the painful procedure of manually logging each it
  <li><a href="https://github.com/INVENTMGMT/frontend">Frontend</a></li>
  <li><a href="https://github.com/INVENTMGMT/backend/wiki/UML-Use-Case-Diagram">UML Use Case Diagram</a></li>
  <li><a href="https://github.com/INVENTMGMT/backend/wiki/Class-Diagram">UML Class Diagram</a></li>
- <li><a href="FIGMA">"https://www.figma.com/file/YJZlZZXXwf9Z0C5rAfSNvP/Untitled?node-id=0%3A1"</a></li>
+ <li><a href="https://www.figma.com/file/YJZlZZXXwf9Z0C5rAfSNvP/Untitled?node-id=0%3A1">"FIGMA"</a></li>
 </ul>
 
 
