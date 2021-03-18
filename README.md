@@ -40,25 +40,19 @@ of items, which will eliminate the painful procedure of manually logging each it
 <li><code>yarn global add serverless</code></li>
 <li><code>yarn add serverless-offline --save-dev</code></li>
 <li><code>yarn add apollo-server-lambda</code></li>
+<li><code>yarn add graphql</code></li>
 </ul>
 <br>
 <p>Next, type in <code>serverless offline</code> and visit the url it generates on your local machine</p>
 <br>
-<p>Now you can start to play around with the <strong>resolvers, typedefs, and queries</strong> that our Apollo Server is working with</p>
 
-<h5>Resolvers</h5>
-<p>These will be the keywords that are waiting to be triggered.</p>
- 
- 
-<h5>Typedefs</h5>
-<p>Typedefs will define both Queries and the contents of any objects we return. This is where Graphql gets pretty powerful. Notice how our <code>hello</code> query is supposed to return a String.</p>
+<h4>Setting up the AWS CLI</h4>
+<ol>
+  <li>Visit the aws-cli <a href=https://docs.aws.amazon.com/cli/latest/userguide/install-cliv1.html> website</a> and following the instructions for your OS</li>
+  <li>After downloading the CLI, visit the <a href=https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html> configuration instructions </a> to get your AWS set up. It's all free and will be running locally. We need the AWS CLI to create local dynamoDB tables</li>
+</ol>
 
-<h5>Queries</h5>
-<p>In the same constant, we define all of the Queries our Graphql server will handle and what it returns. If we define another object, like a Store Item, it can hold a String id and Int price. Then our Query could be define to return a Store Item</p>
-<br>
-<p> Thats all I got for now, we'll do some demos when we meet</p>
-
-<h3>Installing Docker</h3>
+<h4>Installing Docker</h3>
 <p>Visit the website <a href=https://docs.docker.com/get-docker/> here </a></p>
 <p>Now follow these commands closely</p>
 <ol>
@@ -66,7 +60,7 @@ of items, which will eliminate the painful procedure of manually logging each it
  <li>Check Docker installed properly with <code>docker --version</code></li>
  <li>Hit <code>docker pull amazon/dynamodb-local</code></li>
  <li>Run <code>docker run -p 8000:8000 amazon/dynamodb-local</code></li>
- <li>This shell is now being used for the db listener. Open another shell and run <code>scripts/create-table</code> from the project root directory</li>
+ <li>This shell is now being used for the db listener. Open another shell and run <code>scripts/init.sh</code> from the project root directory</li>
  <li>The printout should list a new table got created on our localhost</li>
 </ol>
 
