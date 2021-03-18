@@ -44,7 +44,6 @@ of items, which will eliminate the painful procedure of manually logging each it
 </ul>
 <br>
 <p>Next, type in <code>serverless offline</code> and visit the url it generates on your local machine</p>
-<br>
 
 <h4>Setting up the AWS CLI</h4>
 <ol>
